@@ -17,7 +17,7 @@ The sources of main project tasks (4 stages) and testing.
 
 Install the wheel file using pip after clone/fork:
 
-[> $ pip install dist/food_blog-3.10-py3-none-any.whl]: #
+> $ pip install dist/investors-calculator-3.10-py3-none-any.whl
 
 ## Program description
 
@@ -35,3 +35,5 @@ Have fun!
 ## Progress
 
 29.11.22 Project started - gitHub repo and project structure setup.
+
+03.12.22 Stage 1 completed: just implementing the menus.

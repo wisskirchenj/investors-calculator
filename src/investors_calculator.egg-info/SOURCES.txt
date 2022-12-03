@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/.DS_Store
+src/calculator/main.py
+src/investors_calculator.egg-info/PKG-INFO
+src/investors_calculator.egg-info/SOURCES.txt
+src/investors_calculator.egg-info/dependency_links.txt
+src/investors_calculator.egg-info/top_level.txt

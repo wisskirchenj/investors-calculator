@@ -3,7 +3,17 @@ README.md
 setup.cfg
 setup.py
 src/.DS_Store
+src/calculator/base_metadata.py
+src/calculator/company.py
+src/calculator/financial.py
+src/calculator/init_db.py
+src/calculator/investor.db
 src/calculator/main.py
+src/calculator/__pycache__/base_metadata.cpython-310.pyc
+src/calculator/__pycache__/company.cpython-310.pyc
+src/calculator/__pycache__/financial.cpython-310.pyc
+src/calculator/test/companies.csv
+src/calculator/test/financial.csv
 src/investors_calculator.egg-info/PKG-INFO
 src/investors_calculator.egg-info/SOURCES.txt
 src/investors_calculator.egg-info/dependency_links.txt

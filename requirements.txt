@@ -27,3 +27,6 @@ distlib~=0.3.6
 sty~=1.0.4
 attrs~=22.1.0
 iniconfig~=1.1.1
+SQLAlchemy~=1.4.44
+pytz~=2022.6
+exceptiongroup~=1.0.4

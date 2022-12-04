@@ -7,7 +7,7 @@ Graduate project implemented in the Track 'SQL with Python' of hyperskill.org's 
 - Python 3.10.8,
 - SQLite 3
 - SQLAlchemy
-- with packages: sqlite3, sys, sty, argparse, scikit-learn, tox, black and isort
+- with packages: sqlite3, csv, sqlalchemy, typing, scikit-learn, tox, black and isort
 
 ## Repository Contents
 
@@ -37,3 +37,6 @@ Have fun!
 29.11.22 Project started - gitHub repo and project structure setup.
 
 03.12.22 Stage 1 completed: just implementing the menus.
+
+04.12.22 Stage 2 completed: Use SQLAlchemy with declarative ORM-Mapping of Company and Financial (= Financial Instrument)
+entities. Use csv.DictReader to read initial csv-data, stored with **dict as keyword-parameters.

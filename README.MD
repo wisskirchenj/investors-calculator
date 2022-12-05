@@ -38,5 +38,6 @@ Have fun!
 
 03.12.22 Stage 1 completed: just implementing the menus.
 
-04.12.22 Stage 2 completed: Use SQLAlchemy with declarative ORM-Mapping of Company and Financial (= Financial Instrument)
-entities. Use csv.DictReader to read initial csv-data, stored with **dict as keyword-parameters.
+04.12.22 Stage 2 completed: Use SQLAlchemy with declarative ORM-Mapping of Company and Financial 
+(= Financial Analytics Details) entities. Use csv.DictReader to read initial csv-data, stored with **dict 
+as keyword-parameters.

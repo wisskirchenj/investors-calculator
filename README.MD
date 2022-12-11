@@ -41,3 +41,7 @@ Have fun!
 04.12.22 Stage 2 completed: Use SQLAlchemy with declarative ORM-Mapping of Company and Financial 
 (= Financial Analytics Details) entities. Use csv.DictReader to read initial csv-data, stored with **dict 
 as keyword-parameters.
+
+11.12.22 Stage 3 completed: Now all the crud menu items are implemented - create, update, delete, list companies and
+associated financial indicatives as well as calculate some ratios. Intensely used SQL Alchemy - a great tool !
+Implemented lazy singleton for the CrudHandler.

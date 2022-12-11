@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 
-from input_util import menu_choice
-from init_db import init_database
 from crud_handler import CrudHandler
+from init_db import init_database
+from input_util import menu_choice
 
 MAIN_MENU = '''
 MAIN MENU
@@ -49,7 +49,7 @@ def main():
     print(WELCOME_MESSAGE)
     engine = init_database()
     with Session(engine) as session:
-        user_entry_loop(session)    
+        user_entry_loop(session)
         session.commit()
 
 

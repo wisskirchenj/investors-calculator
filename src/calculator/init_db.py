@@ -1,13 +1,14 @@
 from csv import DictReader
 from typing import Type
+
 from sqlalchemy import create_engine, inspect
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session
 from sqlalchemy.orm.decl_api import DeclarativeMeta
 
-from base_metadata import Base
 import company
 import financial
+from base_metadata import Base
 
 CSV_COMPANY = 'test/companies.csv'
 CSV_FINANCIAL = 'test/financial.csv'
@@ -28,7 +29,7 @@ def read_and_insert_csv(session: Session, filepath: str, entity_class: Type[Decl
 
 
 def init_database() -> Engine:
-    engine = create_engine('sqlite:///investor.db', echo=True)
+    engine = create_engine('sqlite:///investor.db')
     if len(inspect(engine).get_table_names()) == 2:
         return engine
     Base.metadata.create_all(engine)

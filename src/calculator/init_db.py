@@ -30,6 +30,7 @@ def read_and_insert_csv(session: Session, filepath: str, entity_class: Type[Decl
 
 def init_database() -> Engine:
     engine = create_engine('sqlite:///investor.db')
+    # if database has 2 tables return else create them from csv
     if len(inspect(engine).get_table_names()) == 2:
         return engine
     Base.metadata.create_all(engine)

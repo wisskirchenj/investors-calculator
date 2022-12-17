@@ -67,7 +67,5 @@ class CrudHandler:
 
     def list_all_companies(self):
         print('COMPANY LIST')
-        companies = [f'{comp.ticker} {comp.name} {comp.sector}'
-                     for comp in self.session.query(company.Company).order_by(company.Company.ticker).all()]
-        for line in companies:
-            print(line)
+        for comp in company.find_all(self.session):
+            print(f'{comp.ticker} {comp.name} {comp.sector}')

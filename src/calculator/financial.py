@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Float, String
+from sqlalchemy import Column, Float, String, func
 from sqlalchemy.orm import Session
 
 from base_metadata import Base
@@ -37,6 +37,17 @@ FINANCIAL_DEFAULT_DICT = dict(ebitda=987654321, sales=987654321, net_profit=9876
                               market_price=987654321, net_debt=987654321, assets=987654321,
                               equity=987654321, cash_equivalents=987654321, liabilities=987654321)
 
+ND_EBITDA = 'ND/EBITDA'
+ROE = 'ROE'
+ROA = 'ROA'
+INDICATOR_KEYS = [ND_EBITDA, ROE, ROA]
+
+INDICATORS = {
+    ND_EBITDA: func.round(Financial.net_debt / Financial.ebitda, 2),
+    ROE: func.round(Financial.net_profit / Financial.equity, 2),
+    ROA: func.round(Financial.net_profit / Financial.assets, 2)
+}
+
 
 def read_user_input(ticker: str, update=False, session=None) -> Financial:
     new_dict = {'ticker': ticker}
@@ -56,3 +67,8 @@ def none_corrected_float_divide(f: float | None, g: float | None) -> str:
 
 def get_financial_by_ticker(ticker: str, session: Session) -> Financial:
     return session.query(Financial).filter(Financial.ticker == ticker).scalar()
+
+
+def query_top_ten(indicator_key: str, session: Session) -> list[tuple]:
+    indicator = INDICATORS[indicator_key]
+    return session.query(Financial.ticker, indicator).order_by(indicator.desc()).limit(10).all()

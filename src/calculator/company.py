@@ -37,3 +37,7 @@ def user_select(session: Session) -> Company | None:
     chosen = menu_choice('\n'.join(f'{i} {company.name}' for i, company in enumerate(matching)),
                          len(matching) - 1, loop_on_invalid=True, enter_message='Enter company number:')
     return matching[chosen]
+
+
+def find_all(session: Session) -> list[Company]:
+    return session.query(Company).order_by(Company.ticker).all()

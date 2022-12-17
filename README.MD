@@ -46,6 +46,6 @@ as keyword-parameters.
 associated financial indicatives as well as calculate some ratios. Intensely used SQL Alchemy - a great tool !
 Implemented lazy singleton for the CrudHandler.
 
-11.12.22 Final Stage 4 completed: A Top Ten Menu is added, whose menu items serve for displaying the TOP 10 performer
+17.12.22 Final Stage 4 completed: A Top Ten Menu is added, whose menu items serve for displaying the TOP 10 performer
 companies with regard to some specific predefined indicator (e.g. ROE = Return On Equity). Uses SQL Alchemy's function
 generator func (here: func.round()) and more advanced querying, ordering and limiting.

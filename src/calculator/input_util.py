@@ -8,7 +8,7 @@ def menu_choice(menu_text: str, max_item: int, loop_on_invalid=False,
                 invalid_message=INVALID_OPTION, enter_message=ENTER_OPTION) -> int | None:
     print(menu_text, enter_message, sep='\n')
     choice = input()
-    while not match(f'\\d+$', choice) or int(choice) > max_item:
+    while not match('\\d+$', choice) or int(choice) > max_item:
         if invalid_message:
             print(invalid_message)
         if not loop_on_invalid:

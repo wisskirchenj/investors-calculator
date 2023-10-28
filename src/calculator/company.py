@@ -1,3 +1,5 @@
+from typing import Type
+
 from sqlalchemy import Column, String
 from sqlalchemy.orm import Session
 
@@ -24,11 +26,11 @@ def read_user_input() -> Company:
     return Company(**new_co)
 
 
-def query_company_contains(search_text: str, session: Session) -> list[Company]:
+def query_company_contains(search_text: str, session: Session) -> list[Type[Company]]:
     return session.query(Company).filter(Company.name.ilike(f'%{search_text}%')).all()
 
 
-def user_select(session: Session) -> Company | None:
+def user_select(session: Session) -> Type[Company] | None:
     search = input('Enter company name:\n')
     matching = query_company_contains(search, session)
     if not matching:
@@ -39,5 +41,5 @@ def user_select(session: Session) -> Company | None:
     return matching[chosen]
 
 
-def find_all(session: Session) -> list[Company]:
+def find_all(session: Session) -> list[Type[Company]]:
     return session.query(Company).order_by(Company.ticker).all()
